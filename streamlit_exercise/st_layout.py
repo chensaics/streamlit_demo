@@ -10,16 +10,23 @@ import time
 import pandas as pd
 
 
-st.title('streamlit布局范例')
+st.title('Streamlit 布局范例')
 
 st.header("1，sidebar")
 st.text("see the left side")
 with st.sidebar:
     st.subheader("配置参数")
-    optim = st.multiselect(label="optimizer:", options=["SGD", "Adam", "AdamW"])
-    lr = st.slider(label="lr:", min_value=1e-5, max_value=0.1)
-    early_stopping = st.checkbox(label="early_stopping", value=True)
-    batch_size = st.number_input(label="batch_size", min_value=1, max_value=64)
+    optim = st.multiselect(label="optimizer:",
+                           options=["SGD", "Adam", "AdamW"])
+    lr = st.slider(label="learning rate:",
+                   min_value=1e-5,
+                   max_value=0.1)
+    early_stopping = st.checkbox(label="early_stopping",
+                                 value=True)
+
+    batch_size = st.number_input(label="batch_size",
+                                 min_value=1,
+                                 max_value=64)
 
 st.header("2，columns")
 col1, col2, col3 = st.columns(3)
@@ -49,7 +56,7 @@ st.header("5，container")
 
 container = st.container()
 container.write("1:This should in container")
-st.write("2:This should out  container")
+st.write("2:This should out container")
 container.write("3:This should in container too")
 container.bar_chart(data=[1, 1, 2, 3, 5, 8, 13, 21, 33, 54])
 
