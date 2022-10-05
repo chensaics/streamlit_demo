@@ -15,3 +15,5 @@ with st.form("my_form"):
         st.write("slider", slider_val, "checkbox", checkbox_val)
 
 st.write("Outside the form")
+
+
